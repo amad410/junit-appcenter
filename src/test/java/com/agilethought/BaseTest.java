@@ -164,16 +164,18 @@ public class BaseTest {
     }
 
     public void closeApp() {
-        ((InteractsWithApps) getDriver()).closeApp();
+        ((InteractsWithApps) _driverManager.getDriver()).closeApp();
     }
 
     public void launchApp() {
-        ((InteractsWithApps) getDriver()).launchApp();
+        ((InteractsWithApps) _driverManager.getDriver()).launchApp();
     }
-   /* @After
+    @After
     public void tearDown() {
-        if(getDriver() != null){
-            getDriver().quit();
+        if(_driverManager.getDriver() != null)
+        {
+            closeApp();
+            _driverManager.removeDriver();
         }
-    }*/
+    }
 }

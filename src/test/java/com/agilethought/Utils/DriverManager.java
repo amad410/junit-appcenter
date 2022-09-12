@@ -24,10 +24,9 @@ public class DriverManager {
         return driver.get();
     }
 
-
-    /*public void setDriver(AppiumDriver driver2){
-        driver.set(driver2);
-    }*/
+    public void removeDriver(){
+        driver.remove();
+    }
 
     public void setDriver(AppiumDriver driver2){
         driver.set(driver2);
