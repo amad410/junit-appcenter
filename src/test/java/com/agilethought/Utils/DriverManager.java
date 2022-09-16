@@ -44,7 +44,7 @@ public class DriverManager {
 
                         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "android");
                         ///TODO: The MobileCapabilityType.App should point to the location of the released *.apk file within the application solution
-                        capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Antwan.Maddox\\source\\repos\\junit-appcentertest\\apps\\weather-app-debug.apk");
+                        capabilities.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir") + "/apps/weather-app-debug.apk");
                         ///TODO: Alternatively, the MobileCapabilityType.App should point to the repo URL location of the released *.apk file within the application solution
                         //capabilities.setCapability(MobileCapabilityType.APP, "[path to local repo]/[*.apk]");
                         capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 7913);
@@ -76,7 +76,7 @@ public class DriverManager {
                              capabilities.setCapability(MobileCapabilityType.APP, ipaPath);
                         ***/
                         ///TODO: The MobileCapabilityType.App should point to the location of the released *.app file within the application solution
-                        capabilities.setCapability(MobileCapabilityType.APP, "C:\\Users\\Antwan.Maddox\\source\\repos\\junit-appcentertest\\apps\\[*.app]");
+                        capabilities.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir") + "/apps/[*.app]");
                         ///TODO: Alternatively, the MobileCapabilityType.App should point to the repo URL location of the released *.app file within the application solution
                         //capabilities.setCapability(MobileCapabilityType.APP, "[path to local repo]/[*.app]");
                         capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, 7913);
