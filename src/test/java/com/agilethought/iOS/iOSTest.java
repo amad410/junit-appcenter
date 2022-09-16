@@ -18,7 +18,7 @@ public class iOSTest extends BaseTest {
         System.setProperty("platformName","iOS");
     }
 
-    @Test
+    //@Test
     public void Verify_London_Weather() throws MalformedURLException, InterruptedException {
 
         mainPage = new MainPage();

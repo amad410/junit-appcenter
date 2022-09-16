@@ -15,6 +15,9 @@ import org.apache.logging.log4j.ThreadContext;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
+import org.junit.Rule;
+import org.junit.rules.TestWatcher;
+import org.junit.runner.Description;
 import org.openqa.selenium.support.PageFactory;
 import java.io.*;
 import java.util.HashMap;
@@ -31,6 +34,7 @@ public class BaseTest {
     protected static ThreadLocal <String> deviceName = new ThreadLocal<String>();
     private DriverManager _driverManager;
     private static TestUtils utils;
+    private String watchLog = "";
     InputStream inputStream;
     public AppiumDriver getDriver() {
         return _driver.get();
@@ -178,4 +182,21 @@ public class BaseTest {
             _driverManager.removeDriver();
         }
     }
+    @Rule
+    public TestWatcher watchman = new TestWatcher() {
+
+        @Override
+        protected void failed(Throwable e, Description description){
+            watchLog+= "Error occurred: " + e.toString() + "for " + description + "\n";
+            System.out.println(watchLog);
+            takeScreenshot(watchLog);
+        }
+
+        @Override
+        protected void succeeded(Description description){
+            watchLog+= description + " " + "success!\n";
+            System.out.println(watchLog);
+            takeScreenshot(watchLog);
+        }
+    };
 }

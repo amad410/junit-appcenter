@@ -26,7 +26,6 @@ public class AndroidTest extends BaseTest {
         mainPage.selectLondon();
         takeScreenshot("selecting london");
         mainPage.selectWeatherBtn();
-        Thread.sleep(5000);
         takeScreenshot("viewing weather");
 
         Assert.isTrue(mainPage.isTempDisplayed(),"Temperature not displayed");
@@ -45,7 +44,6 @@ public class AndroidTest extends BaseTest {
         mainPage.selectRiyadh();
         takeScreenshot("selecting Riyadh");
         mainPage.selectWeatherBtn();
-        Thread.sleep(5000);
         takeScreenshot("viewing weather");
         Assert.isTrue(mainPage.isTempDisplayed(),"Temperature not displayed");
         Assert.isTrue(mainPage.isWeatherConditionDisplayed(), "Weather condition not displayed");
@@ -63,7 +61,6 @@ public class AndroidTest extends BaseTest {
         mainPage.selectAbuDhabi();
         takeScreenshot("selecting Abu Dhabi");
         mainPage.selectWeatherBtn();
-        Thread.sleep(5000);
         takeScreenshot("viewing weather");
         Assert.isTrue(mainPage.isTempDisplayed(),"Temperature not displayed");
         Assert.isTrue(mainPage.isWeatherConditionDisplayed(), "Weather condition not displayed");

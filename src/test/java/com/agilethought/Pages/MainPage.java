@@ -76,38 +76,46 @@ public class MainPage extends BasePage {
 
     public Boolean isTempDisplayed()
     {
+        waitForVisibility(temperature,5);
+
         return temperature.isDisplayed();
 
     }
 
     public Boolean isWeatherConditionDisplayed()
     {
+        waitForVisibility(weatherCondition,5);
         return weatherCondition.isDisplayed();
 
     }
     public Boolean isHumidityDisplayed()
     {
+        waitForVisibility(humidity,5);
         return humidity.isDisplayed();
 
     }
     public Boolean isPressureDisplayed()
     {
+        waitForVisibility(pressure,5);
         return pressure.isDisplayed();
 
     }
 
     public Boolean isVisibilityDisplayed()
     {
+        waitForVisibility(visibility,5);
         return visibility.isDisplayed();
 
     }
     public Boolean istimeToSunriseDisplayed()
     {
+        waitForVisibility(timeToSunrise,5);
         return timeToSunrise.isDisplayed();
 
     }
     public Boolean istimeToSunsetDisplayed()
     {
+        waitForVisibility(timeToSunset,5);
         return timeToSunset.isDisplayed();
 
     }
